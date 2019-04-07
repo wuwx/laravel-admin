@@ -1008,7 +1008,7 @@ class Grid
             return $this->resourcePath;
         }
 
-        return app('request')->getPathInfo();
+        return rtrim(app('request')->getBaseUrl(), '/') . app('request')->getPathInfo();
     }
 
     /**
